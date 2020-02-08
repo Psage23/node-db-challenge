@@ -3,12 +3,12 @@ const projects = require('./project-model');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    projects.find()
+    projects.findProjects()
         .then(projects => {
             res.json(projects);
         })
         .catch(err => {
-            res.status(500).json({message: 'Failed to get projects', err})
+            res.status(500).json({message: 'Failed to get projects'})
         })
 })
 
