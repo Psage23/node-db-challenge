@@ -7,12 +7,12 @@ exports.up = function(knex) {
             tbl.text('project_description');
             tbl.boolean('completed').notNullable().defaultTo(false);
         })
-        .createTable('task', tbl => {
+        .createTable('tasks', tbl => {
             tbl.increments();
-            tbl.integer('task_id').notNullable();
+            tbl.integer('task_id').unsigned().notNullable().references("id").inTable("projects");
             tbl.text('task_description').unique().notNullable();
             tbl.text('task_notes');
-            tbl.integer('project.id').unsigned().notNullable();
+            tbl.integer('project_id').unsigned().notNullable();
         })
         .createTable('resources', tbl => {
             tbl.increments();

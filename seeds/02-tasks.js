@@ -4,8 +4,8 @@ exports.seed = function(knex) {
     {
       project_id: 1,
       task_id: 1,
-      task_name: 'Step 1',
-      descriptions: "This project is to help feed the needy"
+      task_notes: 'Step 1',
+      task_description: "This project is to help feed the needy"
     }
   ])
     
