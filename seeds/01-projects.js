@@ -1,9 +1,9 @@
 
 exports.seed = function(knex) {
-  return knex('projects')
+  return knex("projects")
   .truncate()
   .then(function() {
-    return knex('projects').insert([
+    return knex("projects").insert([
       {
         project_name: 'Feed the Needy',
         project_description: 'find food',
